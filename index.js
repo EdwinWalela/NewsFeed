@@ -2,6 +2,7 @@ var https = require('https')
 var express = require('express')
 var app = express();
 var fs = require('fs');
+var port=Number(process.env.PORT || 3000)
 app.set('view engine', 'ejs')
 app.use('/public',express.static('public'));
 
@@ -34,4 +35,4 @@ app.get('/feed',function(req,res){
 
 
 console.log('listening to port 3000')
-app.listen(3000)
+app.listen(port)

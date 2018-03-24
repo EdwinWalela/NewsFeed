@@ -4,5 +4,5 @@
 	"repository":"git+https://github.com/EdwinWalela/NewsFeed.git"
 	"logo":"",
 	"keywords":["node"],
-	"image":""
+	"image":"heroku/nodejs"
 }
