@@ -1,0 +1,8 @@
+{
+	"name":"The News Feed",
+	"description":"Knowledge is power",
+	"repository":"git+https://github.com/EdwinWalela/NewsFeed.git"
+	"logo":"",
+	"keywords":["node"],
+	"image":""
+}
