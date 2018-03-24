@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tests</title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href='/public/style.css' rel='stylesheet' type="text/css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+	<style>
+		body{background-color:#f2f2f2}
+	</style>
+	</head>
+	<body>
+	<a href="/"><button id="home">Home</button></a>
+		<%data.forEach(data=>{%>
+		<% if(data.description){%>
+		<div class="news-float">
+			<div class="meta">
+				<img src="<%=data.urlToImage%>" />
+				<h1>source:</h1>
+				<p><%=data.source.name%></p>
+				<h1>published:</h1>
+					<% var now = new Date()
+					 var d = new Date(data.publishedAt)
+					 var diff = Math.floor((now - d)/3600000)
+					 if (diff > 24 ){ 
+					 var diff = Math.floor(diff/24) %>
+					 	
+				<p> <%=diff%> days ago</p>
+					
+				<%} else if(diff < 1 ){ %>
+					<p>now</p>
+			 <%	} else if (diff === 1 ){ %>
+					<p> <%=diff%> hour ago</p>
+			 <%	} else{%>
+				<p> <%=diff%> hours ago</p>
+				<%}%>
+			</div>
+		
+		<h1 class="news-headline"><%=data.title%></h1>
+		<p class="new-desc"><%=data.description%></p>
+		<a href="<%=data.url%>" target="_blank"><p class="read-more">Read More...</p></a>
+	</div>
+			<%}%>
+		<%})%>
+		<% include partials/footer.ejs %>
+	</body>
+</html>
