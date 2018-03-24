@@ -1,3 +1,3 @@
 # NewsFeed
-News Feed Web App. All information obtained from www.newsapi.org 
+News Feed Web App. All information obtained from https://www.newsapi.org 
 
