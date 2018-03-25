@@ -19,12 +19,27 @@ body{
 	animation: fade-in .5s ease-out 1.5s;
 	animation-fill-mode: forwards;
 }
+#quote{
+	font-family: sans-serif;
+	width: 40%;
+	position: relative;
+	top:40px;
+	margin: auto;
+	margin-top: 3em;
+	line-height: 2em;
+	height: 5em;
+ 	text-align: center;
+	color:#78C0A8;
+	transform: scale(0);
+	animation: fade-in .5s ease-out .85s;
+	animation-fill-mode: forwards;
+}
 
 blockquote{
   font-size: 0.8em;
   width:90%;
 	max-width: 500px;
-  margin:50px auto;
+  margin:0px auto;
   font-family:Open Sans;
   font-style:italic;
   color: #555555;
@@ -64,7 +79,7 @@ blockquote span{
 	margin-top: 1em;
 	font-family: sans-serif;
 	transform: scale(0);
-	animation: fade-in .5s ease-out .4s;
+	animation: fade-in .5s ease-out .75s;
 	animation-fill-mode: forwards;
 }
 
@@ -83,7 +98,7 @@ blockquote span{
 	animation-fill-mode: forwards;
 }
 .grid img:hover{
-border-radius: 30%;
+border-radius: 40%;
 }
 
 @keyframes fade-in{
@@ -116,7 +131,7 @@ button:hover{
 	background-color: #fff;
 	margin: 2em  auto;
 	width: 95%;
-	height: 13em;
+	height: 14em;
 	max-width: 700px;
 	min-width: 250px;
 	padding: 8px;
@@ -129,13 +144,8 @@ button:hover{
 	animation-fill-mode: forwards;
 }
 .news-float:hover{
-	transform: scale(1.08);
-	height: 14em;
-	transition: all ease-in-out .4s;
-}
-.news-float:hover  .new-desc {
-	margin-top: 0;
-	opacity: 1;
+	
+	height: 15em;
 	transition: all ease-in-out .4s;
 }
 
@@ -207,6 +217,11 @@ button:hover{
 	overflow: hidden;
 	height: 60%;
 	transition: all ease-in-out .3s;
+}
+.news-float:hover  .new-desc {
+	margin-top: 0;
+	opacity: 1;
+	transition: all ease-in-out .4s;
 }
 
 .read-more{

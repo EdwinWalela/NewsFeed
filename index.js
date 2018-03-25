@@ -1,7 +1,10 @@
+
+
 var https = require('https')
 var express = require('express')
 var app = express();
 var fs = require('fs');
+var quote = require('./quotes');
 var port=Number(process.env.PORT || 3000)
 app.set('view engine', 'ejs')
 app.use('/public',express.static('public'));
@@ -11,7 +14,7 @@ var apiKey = fs.readFileSync('key.txt','utf8')
 
 //Routes
 app.get('/',function(req,res){
-	res.render('index')
+	res.render('index',{data:quote.quote})
 })
 app.get('/feed',function(req,res){
 	var body = ""
