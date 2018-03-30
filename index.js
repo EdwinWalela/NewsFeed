@@ -7,7 +7,7 @@ var quote = require('./quotes');
 // Read API key from text file (Synchronously)
 var apiKey = fs.readFileSync('key.txt','utf8')
 // Set port as  global
-var port=Number(process.env.PORT || 3000)
+var port=process.env.PORT || 3000;
 
 var app = express();
 // Templating using EJS
