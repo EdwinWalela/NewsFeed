@@ -10,6 +10,7 @@ var apiKey = fs.readFileSync('key.txt','utf8')
 var port=process.env.PORT || 3000;
 
 var app = express();
+
 // Templating using EJS
 app.set('view engine', 'ejs')
 

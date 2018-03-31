@@ -11,12 +11,17 @@ a{
 body{
 	background-color: #fff;
 }
-
 .jumbo{
-	height: 150px;
+	height: 0px;
 	background-color: #78C0A8;
+	overflow:hidden;
+	animation: jumbo 1.5s ease-out 0.5s;
+	animation-fill-mode:forwards;
 }
-
+@keyframes jumbo{
+	from{height:0px;}
+	to{height:150px;}
+}
 .heading {
 	overflow: hidden;
 	font-size: 2em;
@@ -30,14 +35,14 @@ body{
 	animation: fade-in .5s ease-out .75s;
 	animation-fill-mode: forwards;
 }
-.widget{
+#widget{
 	color: #fff;
 	width: 50%;
 	height: 2em;
 	text-overflow:clip;
 	line-height: 2em;
 	max-width: 400px;
-	margin: auto;
+	margin: 1em auto;
 	position: relative;
 	top:15px;
 	text-align: center;
@@ -45,6 +50,18 @@ body{
 	font-family: sans-serif;
 	font-size: 1em;
 	font-weight: 800;
+}
+
+#time{
+	color:#fff;
+	padding:5px;
+	width:40%;
+	font-size:0.6em;
+	font-weight:700;
+	font-family:sans-serif;
+	position:absolute;
+	top:0;
+	float:right;	
 }
 
 .live-runner{
@@ -59,45 +76,18 @@ body{
 	border-left: solid 10px #78C0A8; 
 	border-right: solid 10px #78C0A8; 
 }
-
 .marquee{
 	display: block;
 	position: relative;
 	width: 3000px;
 	height: 1em;
 	transform: translateX(20%);
-	animation: news-scroll 70s linear infinite ;
+	animation: news-scroll 70s linear infinite -1s;
 }
 .p{
 	float:left;
 	margin: 0px 10px;
 	text-decoration: underline;
-}
-@keyframes news-scroll{
-	from{transform:translateX(20%);}
-	to{transform:translateX(-100%);}
-}
-
-
-@media screen and (min-width:700px){
-	.jumbo{
-	height: 350px;
-	background-color: #78C0A8;
-}
-	.heading {
-	overflow: hidden;
-	font-size: 3em;
-		margin-bottom: 3em;
-	position: relative;
-	top:50px;
-	text-align: center;
-	color:#fff;
-	text-transform: uppercase;
-	font-family: sans-serif;
-	transform: scale(0);
-	animation: fade-in .5s ease-out .75s;
-	animation-fill-mode: forwards;
-}
 }
 #home{
 	font-size: 1em;
@@ -121,7 +111,6 @@ body{
 	animation: fade-in .5s ease-out .85s;
 	animation-fill-mode: forwards;
 }
-
 blockquote{
   font-size: 0.8em;
   width:90%;
@@ -139,7 +128,6 @@ blockquote{
 	animation: fade-in .5s ease-out .9s;
 	animation-fill-mode: forwards;
 }
-
 blockquote::before{
   font-family:Arial;
   content: "\201C";
@@ -149,7 +137,6 @@ blockquote::before{
   left: 10px;
   top:-10px;
 }
-
 blockquote span{
   display:block;
   color:#333333;
@@ -157,8 +144,6 @@ blockquote span{
   font-weight: bold;
   margin-top:1em;
 }
-
-
 .grid{
 	margin: 3em auto;
  text-align: center;
@@ -176,15 +161,6 @@ blockquote span{
 .grid img:hover{
 border-radius: 40%;
 }
-
-@keyframes fade-in{
-	from {transform: scale(0);}
-	to { transform: scale(1);}
-}
-
-
-
-
 button{
 	display: inline-block;
 	height: 3em;
@@ -224,7 +200,6 @@ button:hover{
 	height: 15em;
 	transition: all ease-in-out .4s;
 }
-
 .meta{
 	float: left;
 	clear: both;
@@ -236,9 +211,6 @@ button:hover{
 	min-width: 80px;
 	display: inline-block;
 }
-
-
-}
 .meta img{
 	position: relative;
 	border-radius: 5px;
@@ -247,13 +219,11 @@ button:hover{
 	z-index: 18000;
 	transition: all ease-out .4s;
 }
-
 .meta img:hover{
 	width: 300%;
 	height: 100%;
 	transition: all ease-out .4s;
 }
-
 .meta p{
 	color: #7f7f7f;
 	height:11%;
@@ -269,8 +239,6 @@ button:hover{
 	font-size: 0.6em;
 	text-transform: uppercase;
 }
-
-
 .news-headline{
 	text-decoration: underline;
 	color:#6e6b7a;
@@ -286,7 +254,6 @@ button:hover{
 	bottom: 0px;
 	letter-spacing: 1.5px;
 }
-
 .new-desc{
 	opacity: 1;
 	min-width: 200px;
@@ -309,7 +276,6 @@ button:hover{
 	opacity: 1;
 	transition: all ease-in-out .4s;
 }
-
 .read-more{
 	clear: both;
 	height: 1em;
@@ -326,9 +292,6 @@ button:hover{
 	margin-right: 5px;
 	border-radius: 5px;
 }
-
-
-
 .meta img{
 	border-radius: 5px;
 	height: 50%;
@@ -352,8 +315,6 @@ button:hover{
 	font-size: 0.6em;
 	text-transform: uppercase;
 }
-
-
 .news-headline{
 	text-decoration: underline;
 	color:#6e6b7a;
@@ -369,7 +330,6 @@ button:hover{
 	letter-spacing: 1.5px;
 	margin-bottom: 5px;
 }
-
 .new-desc{
 	opacity: 1;
 	min-width: 200px;
@@ -386,7 +346,6 @@ button:hover{
 	text-overflow: ellipsis;
 	transition: all ease-in-out .3s;
 }
-
 .read-more{
 	height: 1em;
 	width: 8em;
@@ -401,7 +360,6 @@ button:hover{
 	margin-right: 5px;
 	border-radius: 5px;
 }
-
 .footer{
 	height: 6em;
 	margin-top: 5em;
@@ -410,20 +368,48 @@ button:hover{
 	padding-top: 20px;
 	font-family: sans-serif;
 }
-
 .footer p{
 	color: #444444;
 	font-size: 0.7em;
 	line-height: 2em;
 	letter-spacing: 1px;
 }
-
 #git-link{
 	text-decoration: underline;
 	color: rgba(255,255,255,0.5);
 }
 span{
 	color:rgba(255, 63, 63,0.5);
+}
+
+@keyframes fade-in{
+	from {transform: scale(0);}
+	to { transform: scale(1);}
+}
+@keyframes news-scroll{
+	from{transform:translateX(20%);}
+	to{transform:translateX(-100%);}
+}
+
+@media screen and (min-width:700px){
+	.jumbo{
+	height: 350px;
+	background-color: #78C0A8;
+}
+	.heading {
+	overflow: hidden;
+	font-size: 3em;
+		margin-bottom: 3em;
+	position: relative;
+	top:50px;
+	text-align: center;
+	color:#fff;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	transform: scale(0);
+	animation: fade-in .5s ease-out .75s;
+	animation-fill-mode: forwards;
+}
 }
 @media screen and (max-width:700px){
 .meta{
@@ -439,7 +425,6 @@ span{
 }
 
 }
-
 @media screen and (min-width:800px){
 .grid{
 	margin: 3em auto;
@@ -484,5 +469,3 @@ span{
 	transition: all ease-in-out .3s;
 }
 }
-
-

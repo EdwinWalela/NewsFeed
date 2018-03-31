@@ -12,9 +12,8 @@
 	<body>
 	<div class="jumbo">
 		<h1 class="heading">News co.</h1>
-			<div class="widget">
-				Be in the know.
-			</div>
+			<div id="widget"></div>
+			<div id="time"></div>
 	</div>
 	<div class="live-runner">
 		<div class="marquee">
@@ -40,10 +39,24 @@
 	<a href="/feed?source=national-geographic"><img src="http://images.e-konomista.pt/articles/emprego-national-geographic.jpg"/></a>
 	<a href="/feed?source=engadget"><img src="https://i.ytimg.com/vi/OJZgtL3PXf8/maxresdefault.jpg"/></a>
 	</div>
-	<script href="./app.js"></script>
+	<script>
+		var greeting;
+		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+		var now = new Date();
+		var day = now.getDay();
+		var today = days[day]
+		var hour = now.getHours();
+		if(hour >= 18){
+			greeting = 'Good Evening!'
+		}else if(hour >=12){
+			greeting = 'Good Afternoon!'
+		}else{greeting = 'Good Morning!'}
+		var el = document.getElementById('widget');
+		el.innerHTML = '<p>'+greeting+ '</p>';
+		var elday = document.getElementById('time');
+		elday.innerHTML = '<p>It\'s '+today+' :).</p>'
+	</script>
 	<% include partials/footer.ejs %>
-	
-	
 	</body>
 </html>
 
