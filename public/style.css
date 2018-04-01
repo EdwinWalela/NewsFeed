@@ -8,6 +8,9 @@ a{
 	text-decoration: none;
 	color: inherit;
 }
+ul{
+	list-style:none;
+}
 body{
 	background-color: #fff;
 }
@@ -35,6 +38,7 @@ body{
 	animation: fade-in .5s ease-out .75s;
 	animation-fill-mode: forwards;
 }
+
 #widget{
 	color: #fff;
 	width: 50%;
@@ -144,6 +148,7 @@ blockquote span{
   font-weight: bold;
   margin-top:1em;
 }
+
 .grid{
 	margin: 3em auto;
  text-align: center;
@@ -391,15 +396,20 @@ span{
 	to{transform:translateX(-100%);}
 }
 
+
 @media screen and (min-width:700px){
 	.jumbo{
-	height: 350px;
+	height: 0px;
 	background-color: #78C0A8;
+}
+	@keyframes jumbo{
+	from{height:0px;}
+	to{height:250px;}
 }
 	.heading {
 	overflow: hidden;
 	font-size: 3em;
-		margin-bottom: 3em;
+	margin-bottom: 2em;
 	position: relative;
 	top:50px;
 	text-align: center;

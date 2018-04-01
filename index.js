@@ -20,9 +20,7 @@ app.use('/public',express.static('public'));
 //Routes
 app.get('/',function(req,res){
 	const request = https.get(`https://newsapi.org/v2/top-headlines?sources=next-big-future&apiKey=${apiKey}`, response => {
-		let news = " " ;
-		var dt = []
-		var final = [] ;
+		let news = "";var dt=[];var final=[] ;
 		dt.push(quote.quote)
 		if(response.statusCode === 200){
 				response.on('data',info => {
@@ -57,5 +55,5 @@ app.get('/feed',function(req,res){
 		}
 	})
 })
-console.log('listening to port 3000')
+console.log(`listening to port ${port}`)
 app.listen(port)
